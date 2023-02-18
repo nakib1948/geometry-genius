@@ -1,0 +1,20 @@
+.header-section{
+    background-color: rgba(16, 144, 216, 0.1);;
+}
+
+
+  .column {
+    float: left;
+    width: 31%;
+    margin-right: 15px;
+  }
+
+
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
