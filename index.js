@@ -109,3 +109,5 @@ PentagonBtn.addEventListener('click',function(){
        
     }
 })
+
+//Rhombus area calculation part
