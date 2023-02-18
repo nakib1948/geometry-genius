@@ -24,8 +24,13 @@ function RectangleAndParallelogram(height,width,name){
 }
 
 
-function Ellipse(height,width){
-
+function Ellipse(height,width,name){
+    const Ellipse= (3.1416*height*width).toFixed(2)
+    let list = document.getElementById("totalAreaCalculationList");
+    let li = document.createElement("li");
+    li.innerHTML = `${name}    ${Ellipse}cm<sup>2</sup>
+     <button style="margin-left:20px; margin-bottom:20px" class=" rounded bg-primary text-white py-2 border-0"><small>Convert to m<sup>2</sup></small></button> `;
+    list.appendChild(li);
 }
 
 // Triangle area calculation part
@@ -123,6 +128,25 @@ RhombusBtn.addEventListener('click',function(){
         const RhombusInput1ToNumber=parseFloat(RhombusInput1)
         const RhombusInput2ToNumber=parseFloat(RhombusInput2)
         TriangleAndPentagonAndRhombus(RhombusInput1ToNumber,RhombusInput2ToNumber,name)
+       
+    }
+})
+
+//Ellipse area calculation part
+const EllipseBtn=document.getElementById("Ellipse-btn");
+EllipseBtn.addEventListener('click',function(){
+    const EllipseInput1=document.getElementById("EllipseInput1").value;
+    const EllipseInput2=document.getElementById("EllipseInput2").value;
+    const name='Ellipse'
+    if (isNaN(EllipseInput1) || isNaN(EllipseInput2) )
+    {
+        alert("please enter a valid number");
+    }
+    else{
+        
+        const EllipseInput1ToNumber=parseFloat(EllipseInput1)
+        const EllipseInput2ToNumber=parseFloat(EllipseInput2)
+        Ellipse(EllipseInput1ToNumber,EllipseInput2ToNumber,name)
        
     }
 })
