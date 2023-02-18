@@ -3,8 +3,13 @@
 randomColor = function(e) {
     e.style.background =  "#" + (Math.random() * 0xFFFFFF<<0).toString(16);
 }
+// link to blog page
+document.getElementById("blog").onclick = function () {
+    window.location.href = "blog.html";
+};
 
 
+//area calculation function
 function TriangleAndPentagonAndRhombus(height,width,name){
     const triangleOrPentagonAreaCalculate= (0.5*height*width).toFixed(2)
     let list = document.getElementById("totalAreaCalculationList");
