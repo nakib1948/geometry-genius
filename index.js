@@ -5,7 +5,7 @@ randomColor = function(e) {
 }
 
 
-function TriangleAndPentagon(height,width,name){
+function TriangleAndPentagonAndRhombus(height,width,name){
     const triangleOrPentagonAreaCalculate= (0.5*height*width).toFixed(2)
     let list = document.getElementById("totalAreaCalculationList");
     let li = document.createElement("li");
@@ -23,9 +23,6 @@ function RectangleAndParallelogram(height,width,name){
     list.appendChild(li);
 }
 
-function Rambus(height,width){
-
-}
 
 function Ellipse(height,width){
 
@@ -46,7 +43,7 @@ traingleBtn.addEventListener('click',function(){
         
         const triangleInput1ToNumber=parseFloat(triangleInput1)
         const triangleInput2ToNumber=parseFloat(triangleInput2)
-        TriangleAndPentagon(triangleInput1ToNumber,triangleInput2ToNumber,name)
+        TriangleAndPentagonAndRhombus(triangleInput1ToNumber,triangleInput2ToNumber,name)
        
     }
 })
@@ -105,9 +102,27 @@ PentagonBtn.addEventListener('click',function(){
         
         const PentagonInput1ToNumber=parseFloat(PentagonInput1)
         const PentagonInput2ToNumber=parseFloat(PentagonInput2)
-        TriangleAndPentagon(PentagonInput1ToNumber,PentagonInput2ToNumber,name)
+        TriangleAndPentagonAndRhombus(PentagonInput1ToNumber,PentagonInput2ToNumber,name)
        
     }
 })
 
 //Rhombus area calculation part
+
+const RhombusBtn=document.getElementById("Rhombus-btn");
+RhombusBtn.addEventListener('click',function(){
+    const RhombusInput1=document.getElementById("RhombusInput1").value;
+    const RhombusInput2=document.getElementById("RhombusInput2").value;
+    const name='Rhombus'
+    if (isNaN(RhombusInput1) || isNaN(RhombusInput2) )
+    {
+        alert("please enter a valid number");
+    }
+    else{
+        
+        const RhombusInput1ToNumber=parseFloat(RhombusInput1)
+        const RhombusInput2ToNumber=parseFloat(RhombusInput2)
+        TriangleAndPentagonAndRhombus(RhombusInput1ToNumber,RhombusInput2ToNumber,name)
+       
+    }
+})
