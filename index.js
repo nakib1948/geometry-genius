@@ -6,11 +6,21 @@ randomColor = function(e) {
 
 
 function TriangleAndPentagon(height,width){
-    return 0.5*height*width
+    const triangleOrPentagonAreaCalculate= (0.5*height*width).toFixed(2)
+    let list = document.getElementById("totalAreaCalculationList");
+    let li = document.createElement("li");
+    li.innerHTML = `Traingle    ${triangleOrPentagonAreaCalculate}cm<sup>2</sup>
+     <button style="margin-left:20px; margin-bottom:20px" class=" rounded bg-primary text-white py-2 border-0"><small>Convert to m<sup>2</sup></small></button> `;
+    list.appendChild(li);
 }
 
 function RectangleAndParallelogram(height,width){
-
+    const RectangleOrParallellogramAreaCalculate=(height*width).toFixed(2)
+    let list = document.getElementById("totalAreaCalculationList");
+    let li = document.createElement("li");
+    li.innerHTML = `Rectangle    ${RectangleOrParallellogramAreaCalculate}cm<sup>2</sup>
+     <button style="margin-left:20px; margin-bottom:20px" class=" rounded bg-primary text-white py-2 border-0"><small>Convert to m<sup>2</sup></small></button> `;
+    list.appendChild(li);
 }
 
 function Rambus(height,width){
@@ -35,11 +45,27 @@ traingleBtn.addEventListener('click',function(){
         
         const triangleInput1ToNumber=parseFloat(triangleInput1)
         const triangleInput2ToNumber=parseFloat(triangleInput2)
-        const triangleAreaCalculate=TriangleAndPentagon(triangleInput1ToNumber,triangleInput2ToNumber)
-        let list = document.getElementById("totalAreaCalculationList");
-        let li = document.createElement("li");
-        li.innerHTML = `Traingle    ${triangleAreaCalculate}cm<sup>2</sup>
-         <button style="margin-left:20px" class=" rounded bg-primary text-white py-2 border-0"><small>Convert to m<sup>2</sup></small></button> `;
-        list.appendChild(li);
+        TriangleAndPentagon(triangleInput1ToNumber,triangleInput2ToNumber)
+       
+    }
+})
+
+
+//Ractangle area calculation part
+
+const RactangleBtn=document.getElementById("Rectangle-btn");
+RactangleBtn.addEventListener('click',function(){
+    const RectangleInput1=document.getElementById("RectangleInput1").value;
+    const RectangleInput2=document.getElementById("RectangleInput2").value;
+    if (isNaN(RectangleInput1) || isNaN(RectangleInput2) )
+    {
+        alert("please enter a valid number");
+    }
+    else{
+        
+        const RectangleInput1ToNumber=parseFloat(RectangleInput1)
+        const RectangleInput2ToNumber=parseFloat(RectangleInput2)
+        RectangleAndParallelogram(RectangleInput1ToNumber,RectangleInput2ToNumber)
+       
     }
 })
